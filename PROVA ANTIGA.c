@@ -32,7 +32,7 @@ int main(){
 	   fgets(word, MAX, stdin);
 	}while(strlen(word)>size+1);
 
-    printf("\n\nCom Linhas\n\n");
+    printf("\nCom Linhas\n");
 	for (i = 0; i < size; i++) {
 	    for (j = 0; j < size; j++) {
 	        for (k = 0; word[k] != '\0', (j+k)<size; k++) {
@@ -43,12 +43,12 @@ int main(){
 	        //printf("Tam palavra %d\n", strlen(word));
 	        //printf("Teste %d\n", test);
 	         if (test == strlen(word)-1) {
-	            printf("\nWord found\n");
+	            printf("Word found\n");
 	        }
 	        test=0;
 	    }
 	}
-	printf("\n\nCom colunas\n\n");
+	printf("Com colunas\n");
 	for (i = 0; i < size; i++) {
 	    for (j = 0; j < size; j++) {
 	        for (k = 0; word[k] != '\0', (i+k)<size; k++) {
@@ -59,13 +59,13 @@ int main(){
 	        //printf("Tam palavra %d\n", strlen(word));
 	        //printf("Teste %d\n", test);
 	         if (test == strlen(word)-1) {
-	            printf("\nWord found\n");
+	            printf("Word found\n");
 	        }
 	        test=0;
 	    }
 	}
 		
-	printf("\n\nCom Diagonal Principal\n\n");
+	printf("Com Diagonal Principal\n");
 	for (i = 0; i < size; i++) {
 	    for (j = 0; j < size; j++) {
 	        for (k = 0; word[k] != '\0', (i+k)<size, (j+k)<size; k++) {
@@ -76,13 +76,13 @@ int main(){
 	        //printf("Tam palavra %d\n", strlen(word));
 	        //printf("Teste %d\n", test);
 	         if (test == strlen(word)-1) {
-	            printf("\nWord found\n");
+	            printf("Word found\n");
 	        }
 	        test=0;
 	    }
 	}
 			
-	printf("\n\nCom Diagonal Secundaria\n\n");
+	printf("Com Diagonal Secundaria\n");
 	for (i = 0; i < size; i++) {
 	    for (j = 0; j < size; j++) {
 	        for (k = 0; word[k] != '\0', (i-k)<size, (j+k)<size; k++) {
@@ -93,7 +93,7 @@ int main(){
 	        //printf("Tam palavra %d\n", strlen(word));
 	        //printf("Teste %d\n", test);
 	         if (test == strlen(word)-1) {
-	            printf("\nWord found\n");
+	            printf("Word found\n");
 	        }
 	        test=0;
 	    }
