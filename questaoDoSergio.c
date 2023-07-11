@@ -50,9 +50,31 @@ void searchHighestNumber(int A, int B, int M[MAX][MAX], int vector[MAX], int *S)
   *S=k;
 }
 void printVector(int V[MAX], int S){
+  printf("Your vector of highest numbers is: ");
   for(int i=0;i<S;i++){
     printf("%d ", V[i]);
   }
+}
+int greaterOfAll(int V[MAX], int size){
+    int G;
+    G=V[0];
+    for(int i=0;i<size;i++){
+        if(V[i]>=G){
+            G=V[i];
+        }
+    }
+    return G;
+}
+int repetitionOfGreater(int M[MAX][MAX], int A, int B, int G){
+    int R=0;
+    for(int i=0;i<A;i++){
+        for(int j=0;j<B;j++){
+            if(M[i][j]==G){
+                R+=1;
+            }
+        }
+    }
+    return R;
 }
 int main(void){
   int lines, columns, sizeOfVector=0;
@@ -64,5 +86,9 @@ int main(void){
   searchHighestNumber(lines, columns, matrix, vector, &sizeOfVector);
   printf("The size of your vector is: %d\n", sizeOfVector);
   printVector(vector, sizeOfVector);
+  int greater = greaterOfAll(vector, sizeOfVector);
+  printf("The greater of all of the highest numbers is: %d", greater);
+  int repetition = repetitionOfGreater(matrix, lines, columns, greater);
+  printf("The number %d shows up %d times in your matrix", greater, repetition);
   return 0;
 }
