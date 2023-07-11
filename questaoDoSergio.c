@@ -27,7 +27,7 @@ void printMatrix(int A, int B, int M[MAX][MAX]){
     }
     printf("\n");
   }
-  printf("\n");
+  //printf("\n");
 }
 void searchHighestNumber(int A, int B, int M[MAX][MAX], int vector[MAX], int *S){
   int highest, k=0;
@@ -79,16 +79,16 @@ int repetitionOfGreater(int M[MAX][MAX], int A, int B, int G){
 int main(void){
   int lines, columns, sizeOfVector=0;
   int matrix[MAX][MAX], vector[MAX];
-  printf("This program will search in a matrix, the highest number in each and every block 2x2 possible.\n");
+  printf("This program will search for the highest number in each possible 2x2 block within a matrix\n");
   readLimitsOfMatrix(&lines, &columns);
   readMatrix(lines, columns, matrix);
   printMatrix(lines, columns, matrix);
   searchHighestNumber(lines, columns, matrix, vector, &sizeOfVector);
-  printf("The size of your vector is: %d\n", sizeOfVector);
-  printVector(vector, sizeOfVector);
+  //printf("The size of your vector is: %d\n", sizeOfVector);
+  //printVector(vector, sizeOfVector);
   int greater = greaterOfAll(vector, sizeOfVector);
-  printf("The greater of all of the highest numbers is: %d", greater);
+  printf("The greater number is: %d\n", greater);
   int repetition = repetitionOfGreater(matrix, lines, columns, greater);
-  printf("The number %d shows up %d times in your matrix", greater, repetition);
+  printf("The number %d shows up %d times in your matrix\n", greater, repetition);
   return 0;
 }
